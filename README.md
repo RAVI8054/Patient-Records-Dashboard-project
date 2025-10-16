@@ -29,7 +29,7 @@ A modern web application to manage patient records efficiently. Built with **Rea
 
 ## Demo
 
-> [Live Demo Link](https://github.com/RAVI8054/Patient-Records-Dashboard-project) 
+> [Live Demo Link](https://patient-records-dashboard-project-self.vercel.app/) 
 
 ---
 
@@ -64,10 +64,16 @@ A modern web application to manage patient records efficiently. Built with **Rea
 ├─ src/
 │  ├─ components/
 │  │  └─ Header.jsx
+│  │  └─ AddPatientForm.jsx
+│  │  └─ PatientCard.jsx
+│  │  └─ PatientModal
 │  ├─ pages/
 │  │  ├─ Home.jsx
-│  │  ├─ Patients.jsx
+│  │  ├─ PatientsPage.jsx
 │  │  └─ About.jsx
+│  ├─ store/
+│  │  └─index.js
+│  │  └─patientsSlice.js
 │  ├─ App.jsx
 │  └─ main.jsx
 ├─ package.json
