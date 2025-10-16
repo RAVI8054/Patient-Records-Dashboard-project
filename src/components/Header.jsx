@@ -23,18 +23,19 @@ function Header() {
                     <Link className="text-gray-800 hover:text-indigo-800" to="/about">About</Link>
                 </nav>
 
-
                 {/* Mobile Hamburger */}
                 <div className="md:hidden">
                     <button
                         onClick={() => setIsOpen(!isOpen)}
-                        className="text-gray-600 hover:text-indigo-600 focus:outline-none"
+                        className={`focus:outline-none transition-colors duration-200 ${isOpen ? 'text-red-600 hover:text-red-700' : 'text-gray-600 hover:text-indigo-600'
+                            }`}
                     >
-                        {/* Hamburger icon */}
                         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             {isOpen ? (
+                                // Close (X) icon
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                             ) : (
+                                // Hamburger icon
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
                             )}
                         </svg>
@@ -44,14 +45,14 @@ function Header() {
 
             {/* Mobile Menu */}
             {isOpen && (
-                <nav className="md:hidden px-4 pb-4 space-y-2 text-lg font-bold">
+                <nav className="md:hidden px-4 pb-4 space-y-2 text-lg font-bold animate-fadeIn">
                     <Link className="block text-gray-800 hover:text-indigo-600" to="/" onClick={() => setIsOpen(false)}>Home</Link>
                     <Link className="block text-gray-800 hover:text-indigo-600" to="/patients" onClick={() => setIsOpen(false)}>Patients</Link>
                     <Link className="block text-gray-800 hover:text-indigo-600" to="/about" onClick={() => setIsOpen(false)}>About</Link>
                 </nav>
             )}
         </header>
-    )
+    );
 }
 
 export default Header;
